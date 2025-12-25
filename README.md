@@ -1,7 +1,7 @@
 # Assignment 3 - SymTable
 This repository contains the implementation files for Assignment 3 of Princeton COS 217. It is a dual implementation of a Symbol Table ADT using both a Linked List and a Resizing Hash Table.
 
-The Christmas Day Bug
+## The Christmas Day Bug
 This assignment officially broke me. The most painful part of this project was a single logic error in symtablehash.c that blew up my entire Christmas day.
 
 The Nightmare
