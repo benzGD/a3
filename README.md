@@ -22,7 +22,7 @@ q->next = p;
 ```
 Honestly i feel so dumb after all this.
 
-Anyway,
+Anyway
 
 Results
 Status: 100% Correct. Passes all test cases.
