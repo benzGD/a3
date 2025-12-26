@@ -4,16 +4,16 @@ This repository contains the implementation files for Assignment 3 of Princeton 
 ## The Christmas Day Bug
 This assignment officially broke me. The most painful part of this project was a single logic error in symtablehash.c that blew up my entire Christmas day.
 
-The Nightmare
-I wrote these two lines in the wrong order inside the resize loop:
+### The Nightmare
+Have a look at these two lines :
 
 ```c
-curr = curr->next;
 q->next = p;
+curr = curr->next;
 ```
-By the time I tried to move curr forward, I had already overwritten q->next (the same memory location). This created an infinite loop that hung the CPU and leaked every block of memory in the table.
+By the time I tried to move curr forward, I had already overwritten q->next (because q and curr refer to the same memory location). This created an infinite loop that hung the CPU and leaked every block of memory in the table. You cannot spot it by reading one line at a time, even repeatedly. You have to step through the code and track the memory in your head like a CPU to see what is actually happening.
 
-The Fix
+### The Fix
 I spent the entire day hunting for a bug that was solved by simply reversing the order of those two lines:
 
 ```c
